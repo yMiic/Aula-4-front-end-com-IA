@@ -1,0 +1,71 @@
+#container{
+    width: 95%;
+    max-width: 920px;
+    height: auto;
+    margin: 0 auto;
+}
+header#topo{
+    width: 100%;
+    height: 84px;
+}
+figure#logo1{
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    margin-top: 0%;
+    margin: 20px auto;
+
+}
+nav#menu{
+    width: 100%;
+    height: 40px;
+    background-color: #000000;
+    float: left;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 40px;
+}
+nav#menu a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 0 15px;
+}
+article#conteudo{
+    width: 70%;
+    height: auto;
+    float: left;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 25px;
+}
+aside#lateral{
+    width: 25%;
+    height: auto;
+    float: right;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 25px;
+}
+footer#rodape{
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+    float: left;
+}
+figure#banner{
+    width: 30%;
+    max-width: 200px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+
+}
