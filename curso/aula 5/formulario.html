@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <hr>
+    <form action="tabela.html">
+        nome: <br>
+        <input type="text" maxlength="8" name="Nome" placeholder="Nome">
+        <br><br/>
+        idade: <br>
+        <input type="number" min="1" max="999" name="Idade" placeholder="Idade"> 
+        <br><br/>
+        turno: <br>
+        <input type="radio" value="manha" name="turno" checked="checked">Manhã
+        <input type="radio" value="tarde" name="turno" checked="checked">Tarde
+        <input type="radio" value="noite" name="turno" checked="checked">Noite
+        <br><br/>
+        Curso <br>
+        <input type="checkbox" name="Curso" value="php">PHP
+        <input type="checkbox" name="Curso" value="java">Java
+        <input type="checkbox" name="Curso" value="HTML">HTML
+        <input type="checkbox" name="Curso" value="CSS">CSS
+        <input type="checkbox" name="Curso" value="Frontend">Front-End
+        <br><br/>
+
+        <label for="">Críticas ou Sujestões:</label> <br>
+        <textarea name="msg" id="msg" cols="20" rows="5" placeholder="Digite Aqui!"></textarea> <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+
+
+        <br><br/>
+
+
+
+    </form>
+
+    <a href="index.html">Voltar</a>
+</body>
+</html>
