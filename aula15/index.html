@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InovaWeb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Roboto', sans-serif; display: flex; background: #27a9f5; }
+    aside {
+      width: 220px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding: 1em;
+      position: fixed;
+    }
+    aside h2 { text-align: center; margin-bottom: 1em; }
+    aside button {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      color: white;
+      padding: 0.8em;
+      text-align: left;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    aside button:hover { background: #34495e; }
+    main {
+      margin-left: 220px;
+      padding: 2em;
+      flex-grow: 1;
+    }
+    .page { display: none; }
+    .active { display: block; }
+    .produtos img {
+      width: 150px;
+      margin: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+      background: rgb(0, 47, 150);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #000000;
+      padding: 0.8em;
+      text-align: center;
+      text-decoration: solid;
+    }
+    th { background: #ecf0f1; }
+    .icone {
+      width: 80px;
+      transition: transform 0.3s ease;
+    
+    }
+
+    .icone:hover {
+      transform: scale(1.2); /* aumenta 20% */
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <h2>🛍️ InovaWeb</h2>
+    <button onclick="navigate('home')">🏠 Início</button>
+    <button onclick="navigate('produtos')">📦 Produtos</button>
+    <button onclick="navigate('grafico')">📊 Gráfico</button>
+    <button onclick="navigate('planilha')">📋 Planilha</button>
+  </aside>
+
+  <main>
+    <div id="home" class="page active">
+      <h1>Bem-vindo à Loja Virtual</h1>
+      <p>Explore nossos produtos e veja os dados de vendas em tempo real!</p>
+    </div>
+
+    <div id="produtos" class="page produtos">
+      <h2>Produtos em Destaque</h2>
+      <div>
+        <img src="img/47678-principal.png" alt="Notebook Gamer" class="icone">
+        <img src="img/phone.jpg" alt="Smartphone X" class="icone">
+        <img src="img/fone.avif" alt="Fone Bluetooth" class="icone">
+      </div>
+    </div>
+
+    <div id="grafico" class="page">
+      <h2>Vendas Mensais</h2>
+      <canvas id="salesChart" width="600" height="300"></canvas>
+    </div>
+
+    <div id="planilha" class="page">
+      <h2>Planilha de Estoque</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Estoque</th>
+            <th>Preço (R$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Notebook Gamer</td><td>12</td><td>5499</td></tr>
+          <tr><td>Smartphone X</td><td>25</td><td>3299</td></tr>
+          <tr><td>Fone Bluetooth</td><td>50</td><td>299</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    function navigate(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        datasets: [{
+          label: 'Vendas (R$)',
+          data: [12000, 15000, 18000, 14000, 20000, 22000],
+          borderColor: '#2980b9',
+          backgroundColor: 'rgba(41, 128, 185, 0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
